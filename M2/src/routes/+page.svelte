@@ -1,26 +1,34 @@
-<script>
-    let hide = false;
-</script>
-
 <svelte:head>
-    <title>Main</title>
+   <title>SvelteKit Tutorial</title>
 </svelte:head>
 
-<h1>This one is main!</h1>
-<h2>Hello world</h2>
 
-<div><p>Hej</p></div>
-<section><p>på dig</p></section>
+<main>
+   <h1>SvelteKit Tutorial</h1>
+   <picture>
+       <source type="/image/webp" srcset="evolution-js.webp" />
+       <img src="/evolution-js.png" alt="Evolution of frontend" />
+   </picture>
 
-<br> <br> <br>
-<button on:click={() => hide = !hide}>Click</button>
-<h1 class:hide = {hide}>Make me invisible!</h1>
+
+   <article>
+       <h2>Om denna sida</h2>
+       <p>Sidan används och utvecklas i samband med en utbildning i 
+          SvelteKit</p> 
+   </article>
+</main>
+
 
 <style>
-    h1 {
-        color: red;
-    }
-    div p {
-        color: blue;
-    }
+   picture {
+       display: inline-block;
+       background-color: aliceblue;
+       padding: 2rem;
+   }
+
+
+   img {
+       width: 100%;
+       max-width: 800px;
+   }
 </style>

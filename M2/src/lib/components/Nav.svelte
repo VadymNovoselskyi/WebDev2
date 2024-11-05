@@ -1,11 +1,17 @@
+<script>
+    import { page } from '$app/stores';
+    let show = false;
+ </script> 
+
 <nav>
-    <button>
+    <button on:click={() => show = !show}>
         <img src="/btn-menu.svg" alt="menu btn" height="25" />
     </button>
-    <ul>
-        <li><a href="/">Hem</a></li>
-        <li><a href="/course">Kurs</a></li>
-        <li><a href="/about">Om</a></li>
+    <ul on:click={() => show = false} class:show>
+        <li><a href="/" class:active={$page.url.pathname === "/"}>Hem</a></li>
+        <li><a href="/course" class:active={$page.url.pathname === "/course"}>Kurs</a></li>
+        <li><a href="/about" class:active={$page.url.pathname === "/about"}>Om</a></li>
+        <li><a href="/reactivity" class:active={$page.url.pathname === "/reactivity"}>Reactivity</a></li>
     </ul>
 </nav>
 
@@ -72,6 +78,9 @@
                     display: block;
                 }
             }
+        }
+        .show {
+            display: block !important;
         }
     }
 
